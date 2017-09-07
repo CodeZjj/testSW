@@ -74,8 +74,93 @@ class ViewController: UIViewController {
             print("完美")
         }
         
-        //http://bbs.520it.com/forum.php?mod=viewthread&tid=2354
-        //准备看guard的使用
+        //guard
+        let age = 18
+        
+        func online(age : Int) -> Void {
+            guard age >= 18 else {
+                print("小于18")
+                return
+            }
+            print("大于18")
+        }
+        
+        online(age: age)
+        
+        //switch
+        let sex = 0
+        switch sex {
+        case 0:
+            print("男")
+        case 1:
+            print("女")
+        default:
+            print("其他")
+        }
+        
+        //一个case中可以判断多个值
+        let sex1 = 0
+        switch sex1 {
+        case 0,1:
+            print("正常人")
+        default:
+            print("其他")
+        }
+        
+        //case穿透
+        let sex2 = 0
+        switch sex2 {
+        case 0:
+            fallthrough
+        case 1:
+            print("正常人")
+        default:
+            print("其他")
+        }
+        
+        //区间 半开半闭区间:0..<10 表示:0~9,不包括10 闭区间:0…10 表示:0~10
+        let qujian = 88
+        switch qujian {
+        case 0..<60:
+            print("不及格")
+        case 60..<80:
+            print("及格")
+        case 80..<90:
+            print("良好")
+        case 90..<100:
+            print("优秀")
+        default:
+            print("满分")
+        }
+        
+        //区间for循环
+        for i in 0..<10 {
+            print(i)
+        }
+        
+        for j in 0...10 {
+            print(j)
+        }
+        
+        for _ in 0..<10 {
+            print("hello")
+        }
+        
+        //while
+        var testWhile = 0
+        while testWhile < 3 {
+            testWhile += 1
+        }
+        
+        //do while循环,使用repeat关键字来代替了do
+        var doWhile = 0
+        repeat {
+            print(doWhile)
+            doWhile += 1
+        } while doWhile < 5
+        
+        //http://bbs.520it.com/forum.php?mod=viewthread&tid=2404
+        
     }
 
     override func didReceiveMemoryWarning() {
