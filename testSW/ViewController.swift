@@ -13,8 +13,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        //http://bbs.520it.com/forum.php?mod=viewthread&tid=2351
         // 变量
         var a : Int = 20
         a = 10
@@ -75,6 +73,9 @@ class ViewController: UIViewController {
         } else {
             print("完美")
         }
+        
+        //http://bbs.520it.com/forum.php?mod=viewthread&tid=2354
+        //准备看guard的使用
     }
 
     override func didReceiveMemoryWarning() {
