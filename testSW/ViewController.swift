@@ -267,8 +267,67 @@ class ViewController: UIViewController {
         dict1["weight"] = 70.0
         print(dict1)
         
-        //http://bbs.520it.com/forum.php?mod=viewthread&tid=2391
+        //删除
+        dict1.removeValue(forKey: "height")
+        print(dict1)
         
+        //修改
+        dict1["name"] = "lmj"
+        print(dict1)
+        dict1.updateValue("yz", forKey: "name")
+        print(dict1)
+        
+        //查询
+        var name11 = dict1["name"]
+        
+        //字典的遍历
+        for valueDic in dict1.values {
+            print(valueDic)
+        }
+        
+        for keyDic in dict1.keys {
+            print(keyDic)
+        }
+        
+        for (key, value) in dict1 {
+            print("\(key)===\(value)")
+        }
+        
+        //字典的合并
+        let dict3 = ["name":"yz","age":"20"]
+        var dict4 = ["height":"1.87","phone":"+86 110"]
+        for (key, value) in dict3 {
+            dict4[key] = value
+        }
+        print(dict3)
+        print(dict4)
+        
+        //元组
+        //使用元组描述一个人的信息
+        let yuanzu = ("1001","张三",30,90)
+        print(yuanzu)
+        
+        //加上元素名称，可以通过名称访问元素
+        let yuanzu1 = (id:"1001",name:"张三",english_score:30,chinese_score:90)
+        print(yuanzu1)
+        
+        //用元组描述一个HTTP的错误信息
+        //写法1
+        let error1 = (404,"not found")
+        print(error1.0)
+        print(error1.1)
+        
+        //写法2
+        let error2 = (errorCode:404,errorInfo:"not found")
+        print(error2.errorCode)
+        print(error2.errorInfo)
+        
+        //写法3
+        let (errorCode,errorInfo) = (404,"not found")
+        print(errorCode)
+        print(errorInfo)
+        
+        //http://bbs.520it.com/forum.php?mod=viewthread&tid=2393
     }
 
     override func didReceiveMemoryWarning() {
