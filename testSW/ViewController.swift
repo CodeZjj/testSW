@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         print(a)
         
         // 常量
-        let b : NSString = "hh"
+        let b : String = "hh"
         print("常量",b)
         print(b)
         
@@ -159,7 +159,115 @@ class ViewController: UIViewController {
             doWhile += 1
         } while doWhile < 5
         
-        //http://bbs.520it.com/forum.php?mod=viewthread&tid=2404
+        //不可变字符串
+        let str : String = "不可变字符串"
+        
+        //可变字符串
+        var str1 : String = "可变字符串"
+        str1 = "test"
+        
+        //获取字符串长度
+        let strCount = str.characters.count
+        
+        //字符串拼接
+        let str2 = "hello"
+        let str3 = "world"
+        let str4 = str2 + str3
+        print(str4)
+        
+        //字符串和其他数据类型拼接
+        let name = "why"
+        let age1 = 18
+        let info = "my name is \(name),age is \(age1)"
+        print(info)
+        
+        //字符串格式化
+        let min = 3
+        let second = 4
+        let time = String(format:"%02d:%02d",arguments:[min, second])
+        let time1 = String(format:"%d---%d",min,second)
+        print(time)
+        print(time1)
+        
+        //字符串截取
+        //1.String转成NSString来使用比较简单
+        let urlStr = "www.baidu.com"
+        let header = (urlStr as NSString).substring(to: 3)
+        let footer = (urlStr as NSString).substring(from: 10)
+        let middle = (urlStr as NSString).substring(with: NSRange(location:4,length:5))
+        print("\(header)===\(footer)===\(middle)")
+        
+        //2.swift截取方式
+        let index1 = urlStr.index(urlStr.startIndex, offsetBy: 3)
+        let header1 = urlStr.substring(to: index1)
+        let index2 = urlStr.index(urlStr.endIndex, offsetBy: -3)
+        let footer1 = urlStr.substring(from: index2)
+        let startIndex = urlStr.index(urlStr.startIndex, offsetBy: 4)
+        let endIndex = urlStr.index(urlStr.startIndex, offsetBy: 9)
+        let rang = Range(startIndex..<endIndex)
+        let middle1 = urlStr.substring(with: rang)
+        print("\(header1)===\(footer1)===\(middle1)")
+        
+        //不可变数组
+        let array : [Any] = ["why",18,1.88]
+        print(array)
+        
+        //可变数组
+        var arrayM = [Any]()
+        
+        //添加
+        arrayM.append("add")
+        
+        //删除
+        //arrayM.removeFirst()
+        
+        //修改
+        arrayM[0] = "why"
+        
+        //取值
+        let str111 = arrayM[0]
+        
+        //遍历数组
+        for i in 0..<array.count {
+            print(array[i])
+        }
+        
+        //for in
+        for item in array {
+            print(item)
+        }
+        
+        //设置遍历的区间
+        for item in array[0..<2] {
+            print(item)
+        }
+        
+        //遍历数组的同时获取下标值
+        let names = ["why","yz","lnj","lmj"]
+        for (index, name) in names.enumerated() {
+            print(index)
+            print(name)
+        }
+        
+        //数组合并,只有相同类型的数组才能合并
+        var array1 = ["why","lmj","lnj"]
+        var array2 = ["yz","wsz"]
+        var array3 = array1 + array2
+        print(array3)
+        
+        //可变字典
+        var dict1 : [String : Any] = [String : Any]()
+        
+        //不可变字典
+        let dict2 : [String : Any] = ["name":"why","age":18]
+        print(dict2)
+        
+        //添加
+        dict1["height"] = 1.88
+        dict1["weight"] = 70.0
+        print(dict1)
+        
+        //http://bbs.520it.com/forum.php?mod=viewthread&tid=2391
         
     }
 
